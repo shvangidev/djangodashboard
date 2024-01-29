@@ -1,0 +1,36 @@
+<!-- marks/templates/marks/student_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Student List{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h2>Student List</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Hindi Marks</th>
+                    <th>English Marks</th>
+                    <th>Maths Marks</th>
+                    <th>Science Marks</th>
+                    <th>Total Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.roll_number }}</td>
+                        <td>{{ student.marks.hindi }}</td>
+                        <td>{{ student.marks.english }}</td>
+                        <td>{{ student.marks.maths }}</td>
+                        <td>{{ student.marks.science }}</td>
+                        <td>{{ student.marks.total_marks }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
